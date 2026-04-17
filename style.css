@@ -1,0 +1,1101 @@
+/* =====================================================
+   STYLE.CSS - Al-Khoir Islamic Boarding School
+   Tema: Islami, Profesional, Warna Hijau Elegan
+   ===================================================== */
+
+
+/* =====================================================
+   1. VARIABEL WARNA & FONT
+      Edit di sini untuk mengubah tema warna situs
+   ===================================================== */
+:root {
+  /* Warna Utama (Hijau Islami) */
+  --color-primary:        #1a6b3a;   /* Hijau tua utama */
+  --color-primary-dark:   #134f2b;   /* Hijau lebih gelap (hover) */
+  --color-primary-light:  #2d9155;   /* Hijau terang */
+  --color-primary-pale:   #e8f5ee;   /* Latar hijau sangat pucat */
+
+  /* Warna Aksen Emas (nuansa Islam klasik) */
+  --color-gold:           #c9a84c;
+  --color-gold-light:     #f0d080;
+
+  /* Warna Netral */
+  --color-white:          #ffffff;
+  --color-bg:             #f7f9f7;   /* Latar halaman */
+  --color-bg-alt:         #eef4ef;   /* Latar section selang-seling */
+  --color-text:           #1e2d1f;   /* Teks utama */
+  --color-text-muted:     #5a6b5c;   /* Teks sekunder */
+  --color-border:         #ccddd1;
+
+  /* Font */
+  --font-arabic:          'Amiri', serif;
+  --font-body:            'Plus Jakarta Sans', sans-serif;
+
+  /* Ukuran & Spasi */
+  --radius:               12px;
+  --radius-lg:            20px;
+  --shadow:               0 4px 20px rgba(26, 107, 58, 0.10);
+  --shadow-md:            0 8px 32px rgba(26, 107, 58, 0.15);
+  --transition:           0.25s ease;
+
+  /* Lebar container */
+  --container-max:        1140px;
+  --navbar-height:        70px;
+}
+
+
+/* =====================================================
+   2. RESET & BASE
+   ===================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =====================================================
+   3. CONTAINER & LAYOUT HELPER
+   ===================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+/* Section dengan latar warna bergantian */
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+
+/* =====================================================
+   4. TOMBOL (BUTTONS)
+      Gunakan class btn, btn--primary, btn--outline, dst.
+   ===================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color var(--transition), color var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+}
+
+/* Tombol Utama - Hijau */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+/* Tombol Outline */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* Tombol Putih (untuk section gelap) */
+.btn--white {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.btn--white:hover {
+  background-color: var(--color-primary-pale);
+  color: var(--color-primary-dark);
+}
+
+/* Ukuran Besar */
+.btn--lg {
+  padding: 14px 36px;
+  font-size: 1rem;
+}
+
+
+/* =====================================================
+   5. HEADER / NAVBAR
+   ===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 12px rgba(26, 107, 58, 0.08);
+  z-index: 1000;
+  transition: box-shadow var(--transition);
+}
+
+/* Navbar saat discroll (kelas ditambah via JS) */
+.navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(26, 107, 58, 0.15);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+}
+
+/* Brand / Logo */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.navbar__school-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar__school-main {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.navbar__school-sub {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  max-width: 200px;
+}
+
+/* Menu Links */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar__link {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  background-color: var(--color-primary-pale);
+  color: var(--color-primary);
+}
+
+.navbar__cta {
+  margin-left: 12px;
+  padding: 9px 22px;
+  font-size: 0.88rem;
+}
+
+/* Tombol Hamburger (Mobile) */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.navbar__toggle span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+
+/* =====================================================
+   6. HERO SECTION
+   ===================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* Ganti URL background sesuai gambar yang diinginkan */
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  padding-top: var(--navbar-height);
+  overflow: hidden;
+}
+
+/* Ornamen pola geometris Islami (latar dekoratif) */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(201,168,76,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(201,168,76,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 40, 18, 0.35);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-white);
+  padding: 80px 24px;
+}
+
+/* Teks Arab di Hero */
+.hero__arabic {
+  font-family: var(--font-arabic);
+  font-size: 2rem;
+  color: var(--color-gold-light);
+  margin-bottom: 4px;
+  direction: rtl;
+}
+
+.hero__arabic-trans {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.hero__title span {
+  color: var(--color-gold-light);
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   7. SECTION PENGUMUMAN
+   ===================================================== */
+.announcement {
+  background-color: var(--color-gold);
+  padding: 14px 0;
+}
+
+.announcement__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.announcement__icon {
+  color: var(--color-primary-dark);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.announcement__inner p {
+  font-size: 0.9rem;
+  color: var(--color-primary-dark);
+  flex: 1;
+}
+
+.announcement__link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   8. SECTION HEADER (JUDUL SECTION)
+   ===================================================== */
+.section__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.section__title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Garis bawah dekoratif pada judul section */
+.section__title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.section__subtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+
+/* =====================================================
+   9. SECTION KEUNGGULAN (FEATURE CARDS)
+   ===================================================== */
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.feature-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--color-primary-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.feature-card__icon i {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.feature-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.feature-card__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   10. SECTION JENJANG PENDIDIKAN
+   ===================================================== */
+.jenjang__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.jenjang-card {
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  position: relative;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.jenjang-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card jenjang unggulan (featured) */
+.jenjang-card--featured {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.jenjang-card__badge {
+  display: inline-block;
+  background: var(--color-primary-pale);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.jenjang-card--featured .jenjang-card__badge {
+  background: rgba(255,255,255,0.2);
+  color: var(--color-white);
+}
+
+.jenjang-card__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.jenjang-card--featured .jenjang-card__title {
+  color: var(--color-white);
+}
+
+.jenjang-card__full {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.jenjang-card--featured .jenjang-card__full {
+  color: rgba(255,255,255,0.8);
+}
+
+.jenjang-card__school {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.jenjang-card--featured .jenjang-card__school {
+  color: rgba(255,255,255,0.7);
+}
+
+.jenjang-card__list {
+  text-align: left;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jenjang-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.jenjang-card--featured .jenjang-card__list li {
+  color: rgba(255,255,255,0.85);
+}
+
+.jenjang-card__list li i {
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.jenjang-card--featured .jenjang-card__list li i {
+  color: var(--color-gold-light);
+}
+
+
+/* =====================================================
+   11. SECTION ALUR PENDAFTARAN
+   ===================================================== */
+.alur__steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.alur__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+  gap: 14px;
+}
+
+.alur__step-num {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(26,107,58,0.25);
+  flex-shrink: 0;
+}
+
+.alur__step-body h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.alur__step-body p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.alur__connector {
+  color: var(--color-primary-light);
+  font-size: 1.2rem;
+  padding-top: 14px;
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   12. SECTION KONTAK
+   ===================================================== */
+.kontak__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.kontak__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--color-white);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+
+.kontak__item:hover {
+  box-shadow: var(--shadow);
+}
+
+.kontak__icon {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.kontak__item h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.kontak__item p,
+.kontak__item a {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.kontak__item a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   13. FOOTER
+   ===================================================== */
+.footer {
+  background: var(--color-primary-dark);
+  color: rgba(255,255,255,0.75);
+  padding: 40px 0 24px;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer__name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.footer__tagline {
+  font-size: 0.85rem;
+  color: var(--color-gold-light);
+  font-family: var(--font-arabic);
+}
+
+.footer__links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.88rem;
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--color-gold-light);
+}
+
+.footer__copy {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* =====================================================
+   14. HALAMAN PENDAFTARAN - FORM
+   ===================================================== */
+
+/* Header halaman dalam (sub-halaman) */
+.page-header {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  padding: calc(var(--navbar-height) + 48px) 0 48px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.page-header__title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.page-header__sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+}
+
+/* Form Pendaftaran */
+.form-section {
+  padding: 60px 0 80px;
+}
+
+.form-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 48px 40px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Judul grup form */
+.form-group-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary-pale);
+  padding-bottom: 10px;
+  margin: 32px 0 20px;
+}
+
+.form-group-title:first-child {
+  margin-top: 0;
+}
+
+/* Grid 2 kolom untuk input */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Group input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Tanda wajib diisi */
+.form-group label .required {
+  color: #e53e3e;
+  margin-left: 2px;
+}
+
+/* Input, Select, Textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 11px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 107, 58, 0.12);
+  background-color: var(--color-white);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Pesan error di bawah input */
+.form-group .error-msg {
+  font-size: 0.78rem;
+  color: #e53e3e;
+  display: none;
+}
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+  border-color: #e53e3e;
+}
+
+.form-group.has-error .error-msg {
+  display: block;
+}
+
+/* Tombol submit form */
+.form-submit {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.form-submit .btn {
+  min-width: 200px;
+  justify-content: center;
+}
+
+/* Pesan sukses setelah submit */
+.form-success {
+  display: none;
+  background: var(--color-primary-pale);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.form-success i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.form-success p {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   15. HALAMAN INFORMASI
+   ===================================================== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.info-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: box-shadow var(--transition);
+}
+
+.info-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.info-card__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--color-primary-pale);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.info-card__icon i {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.info-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.info-card ul {
+  list-style: disc;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-card ul li {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+
+/* =====================================================
+   16. RESPONSIF - MOBILE & TABLET
+   ===================================================== */
+
+/* Tablet (max 900px) */
+@media (max-width: 900px) {
+  .alur__steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .alur__connector {
+    transform: rotate(90deg);
+    padding: 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+
+  /* Navbar Mobile */
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    background: var(--color-white);
+    flex-direction: column;
+    padding: 20px 24px 28px;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-110%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  /* Menu terbuka (kelas ditambah via JS) */
+  .navbar__menu.open {
+    transform: translateY(0);
+  }
+
+  .navbar__list {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+  }
+
+  .navbar__list li {
+    width: 100%;
+  }
+
+  .navbar__link {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .navbar__cta {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Hero Mobile */
+  .hero__arabic {
+    font-size: 1.5rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Form Card Mobile */
+  .form-card {
+    padding: 28px 20px;
+  }
+
+  /* Section padding lebih kecil */
+  .section {
+    padding: 56px 0;
+  }
+}
+
+/* Mobile kecil (max 480px) */
+@media (max-width: 480px) {
+  .navbar__school-sub {
+    display: none;
+  }
+
+  .hero__content {
+    padding: 60px 16px;
+  }
+}

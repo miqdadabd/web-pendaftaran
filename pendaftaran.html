@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ===== META & JUDUL ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Pendaftaran - Al-Khoir Islamic Boarding School Bin Baz 5</title>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ===== IKON ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ===== CSS UTAMA ===== -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       NAVBAR - Sama seperti di index.html
+       Edit menu dan link sesuai kebutuhan
+  ===================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <a href="index.html" class="navbar__brand">
+        <img src="assets/logo.png" alt="Logo Al-Khoir" class="navbar__logo" onerror="this.style.display='none'" />
+        <div class="navbar__school-name">
+          <span class="navbar__school-main">Al-Khoir</span>
+          <span class="navbar__school-sub">Islamic Boarding School Bin Baz 5</span>
+        </div>
+      </a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="navbar__menu" id="navMenu">
+        <ul class="navbar__list">
+          <li><a href="index.html" class="navbar__link">Beranda</a></li>
+          <li><a href="informasi.html" class="navbar__link">Informasi</a></li>
+          <li><a href="pendaftaran.html" class="navbar__link active">Pendaftaran</a></li>
+          <li><a href="index.html#kontak" class="navbar__link">Kontak</a></li>
+        </ul>
+        <a href="pendaftaran.html" class="btn btn--primary navbar__cta">Daftar Sekarang</a>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== AKHIR NAVBAR ===== -->
+
+
+  <!-- =====================================================
+       HEADER HALAMAN PENDAFTARAN
+  ===================================================== -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header__title">Formulir Pendaftaran Siswa Baru</h1>
+      <p class="page-header__sub">
+        MTs &amp; MA Al-Khoir Islamic Boarding School Bin Baz 5 &mdash; Tahun Ajaran 2025/2026
+      </p>
+    </div>
+  </div>
+  <!-- ===== AKHIR PAGE HEADER ===== -->
+
+
+  <!-- =====================================================
+       FORM PENDAFTARAN
+       Edit field, label, dan opsi sesuai kebutuhan sekolah
+  ===================================================== -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-card">
+
+        <!-- Pesan sukses (tersembunyi, muncul setelah submit berhasil) -->
+        <div id="formSukses" class="form-success">
+          <i class="fa-solid fa-circle-check"></i>
+          <p>Pendaftaran berhasil dikirim!</p>
+          <p style="font-weight:400; font-size:0.9rem; margin-top:8px; color: var(--color-primary);">
+            Tim kami akan segera menghubungi Anda untuk konfirmasi dan tahap selanjutnya.
+            Jazakallahu khairan.
+          </p>
+          <a href="index.html" class="btn btn--primary" style="margin-top:20px;">
+            <i class="fa-solid fa-house"></i> Kembali ke Beranda
+          </a>
+        </div>
+
+        <!-- ===== FORM UTAMA ===== -->
+        <form id="formPendaftaran" novalidate>
+
+          <!-- ===== A. DATA CALON SISWA ===== -->
+          <h3 class="form-group-title">
+            <i class="fa-solid fa-user"></i> A. Data Calon Siswa
+          </h3>
+
+          <div class="form-row">
+
+            <!-- Nama Lengkap -->
+            <div class="form-group full-width">
+              <label for="namaLengkap">Nama Lengkap <span class="required">*</span></label>
+              <input type="text" id="namaLengkap" name="namaLengkap"
+                     placeholder="Masukkan nama lengkap calon siswa" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Tempat Lahir -->
+            <div class="form-group">
+              <label for="tempatLahir">Tempat Lahir <span class="required">*</span></label>
+              <input type="text" id="tempatLahir" name="tempatLahir"
+                     placeholder="Kota/Kabupaten" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="form-group">
+              <label for="tanggalLahir">Tanggal Lahir <span class="required">*</span></label>
+              <input type="date" id="tanggalLahir" name="tanggalLahir" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="form-group">
+              <label for="jenisKelamin">Jenis Kelamin <span class="required">*</span></label>
+              <select id="jenisKelamin" name="jenisKelamin">
+                <option value="">-- Pilih --</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+              </select>
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Jenjang yang Dipilih -->
+            <div class="form-group">
+              <label for="jenjang">Jenjang yang Dipilih <span class="required">*</span></label>
+              <select id="jenjang" name="jenjang">
+                <option value="">-- Pilih Jenjang --</option>
+                <option value="MTs">MTs (Madrasah Tsanawiyah)</option>
+                <option value="MA">MA (Madrasah Aliyah)</option>
+              </select>
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Nomor Induk Siswa Nasional (NISN) -->
+            <div class="form-group">
+              <label for="nisn">NISN</label>
+              <input type="text" id="nisn" name="nisn"
+                     placeholder="Nomor Induk Siswa Nasional (opsional)" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Asal Sekolah -->
+            <div class="form-group full-width">
+              <label for="asalSekolah">Asal Sekolah <span class="required">*</span></label>
+              <input type="text" id="asalSekolah" name="asalSekolah"
+                     placeholder="Nama sekolah asal (SD/MI/SMP/MTs)" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Hafalan Qur'an (opsional) -->
+            <div class="form-group">
+              <label for="hafalan">Hafalan Al-Qur'an (Juz)</label>
+              <input type="number" id="hafalan" name="hafalan"
+                     min="0" max="30" placeholder="Contoh: 3" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Pernah mondok? -->
+            <div class="form-group">
+              <label for="mondok">Pernah Mondok Sebelumnya?</label>
+              <select id="mondok" name="mondok">
+                <option value="">-- Pilih --</option>
+                <option value="tidak">Belum pernah</option>
+                <option value="ya">Pernah</option>
+              </select>
+              <span class="error-msg"></span>
+            </div>
+
+          </div><!-- /.form-row -->
+
+
+          <!-- ===== B. DATA ORANG TUA / WALI ===== -->
+          <h3 class="form-group-title">
+            <i class="fa-solid fa-users"></i> B. Data Orang Tua / Wali
+          </h3>
+
+          <div class="form-row">
+
+            <!-- Nama Ayah -->
+            <div class="form-group">
+              <label for="namaAyah">Nama Ayah <span class="required">*</span></label>
+              <input type="text" id="namaAyah" name="namaAyah"
+                     placeholder="Nama lengkap ayah" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Nama Ibu -->
+            <div class="form-group">
+              <label for="namaIbu">Nama Ibu <span class="required">*</span></label>
+              <input type="text" id="namaIbu" name="namaIbu"
+                     placeholder="Nama lengkap ibu" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- No HP Orang Tua -->
+            <div class="form-group">
+              <label for="noHpOrtu">No. HP / WhatsApp Orang Tua <span class="required">*</span></label>
+              <input type="tel" id="noHpOrtu" name="noHpOrtu"
+                     placeholder="Contoh: 0812-3456-7890" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Pekerjaan Orang Tua (opsional) -->
+            <div class="form-group">
+              <label for="pekerjaan">Pekerjaan Orang Tua</label>
+              <input type="text" id="pekerjaan" name="pekerjaan"
+                     placeholder="Pekerjaan ayah/ibu (opsional)" />
+              <span class="error-msg"></span>
+            </div>
+
+            <!-- Alamat Lengkap -->
+            <div class="form-group full-width">
+              <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
+              <textarea id="alamat" name="alamat"
+                        placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota/Kabupaten, Provinsi"></textarea>
+              <span class="error-msg"></span>
+            </div>
+
+          </div><!-- /.form-row -->
+
+
+          <!-- ===== C. BERKAS YANG PERLU DISIAPKAN (Info saja) ===== -->
+          <h3 class="form-group-title">
+            <i class="fa-solid fa-file-lines"></i> C. Berkas yang Perlu Disiapkan
+          </h3>
+          <!-- Edit daftar berkas sesuai syarat pendaftaran sekolah -->
+          <div style="background: var(--color-primary-pale); border-radius: 8px; padding: 18px 20px; margin-bottom: 8px;">
+            <p style="font-size: 0.88rem; color: var(--color-primary-dark); font-weight: 600; margin-bottom: 10px;">
+              Siapkan berkas berikut untuk dibawa saat verifikasi:
+            </p>
+            <ul style="list-style: disc; padding-left: 20px; display: flex; flex-direction: column; gap: 6px;">
+              <li style="font-size: 0.88rem; color: var(--color-text-muted);">Fotokopi Akta Kelahiran (2 lembar)</li>
+              <li style="font-size: 0.88rem; color: var(--color-text-muted);">Fotokopi Kartu Keluarga (2 lembar)</li>
+              <li style="font-size: 0.88rem; color: var(--color-text-muted);">Fotokopi Ijazah / SKHUN terakhir (2 lembar)</li>
+              <li style="font-size: 0.88rem; color: var(--color-text-muted);">Pas foto 3×4 terbaru (4 lembar, background merah)</li>
+              <li style="font-size: 0.88rem; color: var(--color-text-muted);">Surat keterangan sehat dari dokter</li>
+              <!-- Tambah berkas lain sesuai kebutuhan -->
+            </ul>
+          </div>
+
+
+          <!-- ===== D. CATATAN TAMBAHAN ===== -->
+          <h3 class="form-group-title">
+            <i class="fa-solid fa-comment-dots"></i> D. Catatan Tambahan
+          </h3>
+
+          <div class="form-group">
+            <label for="catatan">Catatan / Pesan (opsional)</label>
+            <textarea id="catatan" name="catatan"
+                      placeholder="Tulis informasi tambahan yang ingin disampaikan kepada pihak sekolah..."></textarea>
+            <span class="error-msg"></span>
+          </div>
+
+
+          <!-- ===== TOMBOL SUBMIT ===== -->
+          <div class="form-submit">
+            <button type="submit" class="btn btn--primary btn--lg">
+              <i class="fa-solid fa-paper-plane"></i> Kirim Pendaftaran
+            </button>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 12px;">
+              Dengan mengirim formulir ini, Anda menyetujui syarat dan ketentuan pendaftaran.
+            </p>
+          </div>
+
+        </form>
+        <!-- ===== AKHIR FORM ===== -->
+
+      </div><!-- /.form-card -->
+    </div>
+  </section>
+  <!-- ===== AKHIR FORM SECTION ===== -->
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="footer__name">Al-Khoir Islamic Boarding School Bin Baz 5</p>
+        <p class="footer__tagline">Berilmu, Berakhlak, Bermanfaat</p>
+      </div>
+      <div class="footer__links">
+        <a href="index.html">Beranda</a>
+        <a href="informasi.html">Informasi</a>
+        <a href="pendaftaran.html">Pendaftaran</a>
+        <a href="index.html#kontak">Kontak</a>
+      </div>
+      <p class="footer__copy">&copy; 2025 MTs &amp; MA Al-Khoir Islamic Boarding School Bin Baz 5. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- ===== AKHIR FOOTER ===== -->
+
+
+  <script src="script.js"></script>
+</body>
+</html>

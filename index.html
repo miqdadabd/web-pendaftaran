@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ===== META & JUDUL HALAMAN ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pendaftaran Siswa Baru - Al-Khoir Islamic Boarding School Bin Baz 5</title>
+
+  <!-- ===== FAVICON (opsional, ganti dengan logo sekolah) ===== -->
+  <!-- <link rel="icon" href="assets/logo.png" type="image/png" /> -->
+
+  <!-- ===== FONT GOOGLE (Amiri untuk nuansa Islam, Plus Jakarta Sans untuk teks umum) ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ===== IKON (Font Awesome) ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ===== FILE CSS UTAMA ===== -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================================================
+       NAVBAR - Menu navigasi utama
+       Edit teks dan link sesuai kebutuhan
+  =================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <!-- Logo & Nama Sekolah -->
+      <a href="index.html" class="navbar__brand">
+        <!-- Ganti src dengan path logo sekolah -->
+        <img src="assets/logo.png" alt="Logo Al-Khoir" class="navbar__logo" onerror="this.style.display='none'" />
+        <div class="navbar__school-name">
+          <span class="navbar__school-main">Al-Khoir</span>
+          <span class="navbar__school-sub">Islamic Boarding School Bin Baz 5</span>
+        </div>
+      </a>
+
+      <!-- Tombol Hamburger (Mobile) -->
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Menu Navigasi -->
+      <nav class="navbar__menu" id="navMenu">
+        <ul class="navbar__list">
+          <!-- Edit item menu sesuai kebutuhan -->
+          <li><a href="index.html" class="navbar__link active">Beranda</a></li>
+          <li><a href="informasi.html" class="navbar__link">Informasi</a></li>
+          <li><a href="pendaftaran.html" class="navbar__link">Pendaftaran</a></li>
+          <li><a href="#kontak" class="navbar__link">Kontak</a></li>
+        </ul>
+        <a href="pendaftaran.html" class="btn btn--primary navbar__cta">Daftar Sekarang</a>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== AKHIR NAVBAR ===== -->
+
+
+  <!-- ===================================================
+       HERO SECTION - Banner utama halaman beranda
+  =================================================== -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <!-- Ayat / Kalimat Islami -->
+      <p class="hero__arabic">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</p>
+      <p class="hero__arabic-trans">"Menuntut ilmu adalah kewajiban atas setiap muslim."</p>
+
+      <h1 class="hero__title">Selamat Datang di<br /><span>Al-Khoir Islamic Boarding School</span></h1>
+      <p class="hero__subtitle">
+        MTs &amp; MA Al-Khoir Islamic Boarding School Bin Baz 5<br />
+        Membentuk generasi Muslim berilmu, berakhlak, dan bermanfaat di atas manhaj Salaf.
+      </p>
+      <div class="hero__actions">
+        <a href="pendaftaran.html" class="btn btn--primary btn--lg">
+          <i class="fa-solid fa-pen-to-square"></i> Daftar Sekarang
+        </a>
+        <a href="informasi.html" class="btn btn--outline btn--lg">
+          <i class="fa-solid fa-circle-info"></i> Informasi Sekolah
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ===== AKHIR HERO ===== -->
+
+
+  <!-- ===================================================
+       SECTION PENGUMUMAN / BANNER INFO
+       Edit teks pengumuman sesuai kebutuhan
+  =================================================== -->
+  <section class="announcement">
+    <div class="container announcement__inner">
+      <i class="fa-solid fa-bullhorn announcement__icon"></i>
+      <p>
+        <strong>Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2025/2026</strong>
+        telah dibuka. Segera daftarkan putra/putri Anda!
+      </p>
+      <a href="pendaftaran.html" class="announcement__link">Selengkapnya &rarr;</a>
+    </div>
+  </section>
+  <!-- ===== AKHIR PENGUMUMAN ===== -->
+
+
+  <!-- ===================================================
+       SECTION KEUNGGULAN / FITUR SEKOLAH
+       Edit icon, judul, dan deskripsi sesuai program sekolah
+  =================================================== -->
+  <section class="features section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Mengapa Al-Khoir?</h2>
+        <p class="section__subtitle">Kami berkomitmen mencetak generasi yang unggul dalam ilmu agama dan umum.</p>
+      </div>
+
+      <div class="features__grid">
+
+        <!-- Keunggulan 1 -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <i class="fa-solid fa-book-quran"></i>
+          </div>
+          <h3 class="feature-card__title">Tahfidz Al-Qur'an</h3>
+          <p class="feature-card__desc">Program hafalan Al-Qur'an dengan bimbingan ustadz berpengalaman dan metode yang teruji.</p>
+        </div>
+
+        <!-- Keunggulan 2 -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <i class="fa-solid fa-mosque"></i>
+          </div>
+          <h3 class="feature-card__title">Manhaj Salaf</h3>
+          <p class="feature-card__desc">Pendidikan agama berlandaskan Al-Qur'an dan Sunnah sesuai pemahaman para Salafush Shalih.</p>
+        </div>
+
+        <!-- Keunggulan 3 -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <h3 class="feature-card__title">Tenaga Pendidik Berkualitas</h3>
+          <p class="feature-card__desc">Diampu oleh guru-guru profesional dan alumni pondok pesantren salaf ternama.</p>
+        </div>
+
+        <!-- Keunggulan 4 -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <i class="fa-solid fa-house-chimney"></i>
+          </div>
+          <h3 class="feature-card__title">Asrama Nyaman</h3>
+          <p class="feature-card__desc">Fasilitas asrama yang bersih, aman, dan kondusif untuk proses belajar dan beribadah.</p>
+        </div>
+
+        <!-- Keunggulan 5 -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <h3 class="feature-card__title">Ilmu Umum Seimbang</h3>
+          <p class="feature-card__desc">Kurikulum nasional yang terintegrasi dengan pendidikan agama secara seimbang dan komprehensif.</p>
+        </div>
+
+        <!-- Keunggulan 6 -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <h3 class="feature-card__title">Lingkungan Islami</h3>
+          <p class="feature-card__desc">Suasana pesantren yang mendukung pembentukan akhlak mulia dan kemandirian santri.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== AKHIR KEUNGGULAN ===== -->
+
+
+  <!-- ===================================================
+       SECTION JENJANG PENDIDIKAN
+       Edit sesuai jenjang yang tersedia
+  =================================================== -->
+  <section class="jenjang section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Jenjang Pendidikan</h2>
+        <p class="section__subtitle">Tersedia dua jenjang pendidikan formal yang terakreditasi.</p>
+      </div>
+
+      <div class="jenjang__grid">
+
+        <!-- MTs -->
+        <div class="jenjang-card">
+          <div class="jenjang-card__badge">Setingkat SMP</div>
+          <h3 class="jenjang-card__title">MTs Al-Khoir</h3>
+          <p class="jenjang-card__full">Madrasah Tsanawiyah</p>
+          <p class="jenjang-card__school">Islamic Boarding School Bin Baz 5</p>
+          <ul class="jenjang-card__list">
+            <li><i class="fa-solid fa-check"></i> Masa studi 3 tahun</li>
+            <li><i class="fa-solid fa-check"></i> Kurikulum Kemenag + Pesantren</li>
+            <li><i class="fa-solid fa-check"></i> Program Tahfidz</li>
+            <li><i class="fa-solid fa-check"></i> Asrama full-board</li>
+          </ul>
+          <a href="pendaftaran.html" class="btn btn--primary">Daftar MTs</a>
+        </div>
+
+        <!-- MA -->
+        <div class="jenjang-card jenjang-card--featured">
+          <div class="jenjang-card__badge">Setingkat SMA</div>
+          <h3 class="jenjang-card__title">MA Al-Khoir</h3>
+          <p class="jenjang-card__full">Madrasah Aliyah</p>
+          <p class="jenjang-card__school">Islamic Boarding School Bin Baz 5</p>
+          <ul class="jenjang-card__list">
+            <li><i class="fa-solid fa-check"></i> Masa studi 3 tahun</li>
+            <li><i class="fa-solid fa-check"></i> Kurikulum Kemenag + Pesantren</li>
+            <li><i class="fa-solid fa-check"></i> Program Tahfidz lanjutan</li>
+            <li><i class="fa-solid fa-check"></i> Asrama full-board</li>
+          </ul>
+          <a href="pendaftaran.html" class="btn btn--white">Daftar MA</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== AKHIR JENJANG ===== -->
+
+
+  <!-- ===================================================
+       SECTION ALUR PENDAFTARAN
+       Edit langkah-langkah sesuai prosedur sekolah
+  =================================================== -->
+  <section class="alur section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Alur Pendaftaran</h2>
+        <p class="section__subtitle">Ikuti langkah berikut untuk mendaftarkan putra/putri Anda.</p>
+      </div>
+
+      <div class="alur__steps">
+
+        <div class="alur__step">
+          <div class="alur__step-num">1</div>
+          <div class="alur__step-body">
+            <h4>Isi Formulir Online</h4>
+            <p>Lengkapi formulir pendaftaran secara online melalui halaman Pendaftaran.</p>
+          </div>
+        </div>
+
+        <div class="alur__connector"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="alur__step">
+          <div class="alur__step-num">2</div>
+          <div class="alur__step-body">
+            <h4>Verifikasi Berkas</h4>
+            <p>Tim kami akan menghubungi Anda untuk verifikasi kelengkapan berkas pendaftaran.</p>
+          </div>
+        </div>
+
+        <div class="alur__connector"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="alur__step">
+          <div class="alur__step-num">3</div>
+          <div class="alur__step-body">
+            <h4>Tes Seleksi</h4>
+            <p>Calon siswa mengikuti tes tulis dan wawancara sesuai jadwal yang ditentukan.</p>
+          </div>
+        </div>
+
+        <div class="alur__connector"><i class="fa-solid fa-arrow-right"></i></div>
+
+        <div class="alur__step">
+          <div class="alur__step-num">4</div>
+          <div class="alur__step-body">
+            <h4>Pengumuman &amp; Daftar Ulang</h4>
+            <p>Peserta yang diterima melakukan daftar ulang dan pembayaran administrasi.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== AKHIR ALUR PENDAFTARAN ===== -->
+
+
+  <!-- ===================================================
+       SECTION KONTAK
+       Edit informasi kontak sekolah
+  =================================================== -->
+  <section class="kontak section section--alt" id="kontak">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Hubungi Kami</h2>
+        <p class="section__subtitle">Kami siap membantu menjawab pertanyaan Anda.</p>
+      </div>
+
+      <div class="kontak__grid">
+
+        <div class="kontak__item">
+          <i class="fa-solid fa-location-dot kontak__icon"></i>
+          <div>
+            <h4>Alamat</h4>
+            <!-- Ganti dengan alamat sekolah yang sebenarnya -->
+            <p>Jl. Contoh No. 123, Kota, Provinsi, Indonesia</p>
+          </div>
+        </div>
+
+        <div class="kontak__item">
+          <i class="fa-solid fa-phone kontak__icon"></i>
+          <div>
+            <h4>Telepon / WhatsApp</h4>
+            <!-- Ganti dengan nomor yang sebenarnya -->
+            <p><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></p>
+          </div>
+        </div>
+
+        <div class="kontak__item">
+          <i class="fa-solid fa-envelope kontak__icon"></i>
+          <div>
+            <h4>Email</h4>
+            <!-- Ganti dengan email sekolah -->
+            <p><a href="mailto:info@alkhoir.sch.id">info@alkhoir.sch.id</a></p>
+          </div>
+        </div>
+
+        <div class="kontak__item">
+          <i class="fa-brands fa-instagram kontak__icon"></i>
+          <div>
+            <h4>Instagram</h4>
+            <!-- Ganti dengan akun Instagram sekolah -->
+            <p><a href="#">@alkhoir.binbaz5</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== AKHIR KONTAK ===== -->
+
+
+  <!-- ===================================================
+       FOOTER
+       Edit teks footer sesuai kebutuhan
+  =================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <p class="footer__name">Al-Khoir Islamic Boarding School Bin Baz 5</p>
+        <p class="footer__tagline">Berilmu, Berakhlak, Bermanfaat</p>
+      </div>
+      <div class="footer__links">
+        <!-- Edit link footer sesuai kebutuhan -->
+        <a href="index.html">Beranda</a>
+        <a href="informasi.html">Informasi</a>
+        <a href="pendaftaran.html">Pendaftaran</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <p class="footer__copy">&copy; 2025 MTs &amp; MA Al-Khoir Islamic Boarding School Bin Baz 5. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- ===== AKHIR FOOTER ===== -->
+
+
+  <!-- ===== FILE JAVASCRIPT UTAMA ===== -->
+  <script src="script.js"></script>
+
+</body>
+</html>
